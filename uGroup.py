@@ -47,6 +47,6 @@ def table(n):
         homer=len(str(x))
         t += " "*(lenny-homer+1)+str(x)+ "| "
 	for y in ugroup(n):
-	    t += str(y) + " "
+	    t += str(umult(n,x,y)) + " "
         t += " \n"
     print t
