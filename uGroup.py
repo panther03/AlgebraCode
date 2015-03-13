@@ -1,3 +1,5 @@
+
+
 def gcd(m,n):
     if m > n:
         if n == 0:
@@ -28,18 +30,23 @@ def upow(n,a,x):
     return (a**x) % n
 
 def ugen(n,a):
-    gen = []
+    gen = [1]
     x = 1
     while upow(n,a,x) != upow(n,a,0):
         gen.append(upow(n,a,x))
         x += 1
     return gen 
 
-#def table(n): 
-#    t="*"+str(n)+"| "
-#    for a in ugroup(n):#
-#	t += str(a)+" \n"
-#    for x in ugroup(n):#
-#	t += " " + str(n) + "| "
-#	for y in ugroup(n):
-	    
+def table(n): 
+    lenny = len(str(n))
+    t="*"+str(n)+"| "
+    for a in ugroup(n):
+	t += str(a)+" "
+    t += '\n' 
+    for x in ugroup(n):
+        homer=len(str(x))
+        t += " "*(lenny-homer+1)+str(x)+ "| "
+	for y in ugroup(n):
+	    t += str(y) + " "
+        t += " \n"
+    print t
